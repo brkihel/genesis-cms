@@ -1,0 +1,313 @@
+@import-normalize;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: Staatliches;
+  src: url(../fonts/Staatliches-Regular.ttf);
+}
+@font-face {
+  font-family: SFProText-Regular;
+  src: url(../fonts/SFProText-Regular.ttf);
+}
+@font-face {
+  font-family: quadrat-serial-regular;
+  src: url(../fonts/quadrat-serial-regular.ttf);
+}
+@font-face {
+  font-family: Exo2;
+  src: url(../fonts/Exo2.ttf) format("ttf-variations");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+/* Animação para deslizar para cima (entrar) */
+@keyframes slideInUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Classe para aplicar a animação de entrada */
+.slide-in-up {
+  animation: slideInUp 1.2s forwards;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header com imagem de fundo */
+.header-section {
+  background-image: url(../images/01.webp); /* URL da sua imagem de fundo */
+  background-size: cover;
+  flex: 1; /* Faz com que a seção principal ocupe todo o espaço disponível */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: #fff; /* Cor do texto */
+  overflow: hidden; /* Evita overflow */
+}
+
+.cttArea {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 5px solid #ffffff0d;
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  z-index: 2;
+  min-width: 60vw;
+  flex: auto;
+  transition: 0.5s;
+}
+
+/* Overlay escuro para melhorar legibilidade do texto */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Cor do overlay (preto com transparência) */
+  z-index: 2; /* Certifique-se de que o overlay fique acima das partículas */
+}
+
+/* Container para centralizar conteúdo */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* Posição relativa para posicionar o logo */
+  z-index: 3; /* Z-index para ficar acima do overlay */
+}
+
+/* Logo */
+.logo {
+  z-index: 999;
+  margin-bottom: 5px;
+}
+
+.logo img {
+  width: 500px; /* largura da logo */
+  height: 350px; /* altura da logo */
+}
+
+/* Menu de navegação */
+.navbar-custom {
+  background-color: transparent; /* Fundo transparente */
+  background-image: url(../images/navbg.jpg);
+  border-radius: 25px;
+  padding: 0px; /* Espaçamento interno */
+  border: 20px solid transparent;
+  border-image-source: url(../images/border2.png);
+  border-image-slice: 20;
+  border-image-repeat: repeat;
+  min-width: 45vw !important;
+}
+
+.navbar-custom .nav-link {
+  color: #b0641f; /* Cor dos links */
+  font-size: 1.8rem;
+  font-family: "quadrat-serial-regular";
+  text-transform: uppercase; /* Transforma texto em maiúsculas */
+  transition: 0.3s;
+  padding: 0;
+  margin: 0;
+}
+.navbar-custom .nav-link:hover {
+  color: #f77700;
+  background-size: cover;
+}
+.nav-link.active {
+  color: #f77700; /* Cor diferente para indicar o link ativo */
+  font-weight: bold;
+}
+
+#menuButton {
+  transition: 0.5s;
+}
+
+.home-news-container {
+  margin: 0;
+}
+
+.homeRegisterContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2vh;
+  border: solid #b0641f;
+  border-radius: 10px;
+  background-color: #ffffff17;
+}
+
+.homeRegisterContent h2 {
+  font-family: "Staatliches";
+  text-transform: uppercase; /* Transforma texto em maiúsculas */
+  color: #ffffff;
+  font-size: 2.2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.homeRegisterContent h2 a {
+  color: #b0641f;
+  transition: 0.3s;
+}
+.homeRegisterContent h2 a:hover {
+  color: #f77700;
+}
+
+.news-image {
+  max-width: 90%;
+  max-height: 90%;
+  width: auto; /* Largura total da coluna da imagem */
+  height: auto; /* Altura total da coluna da imagem */
+  border-radius: 10px; /* Borda arredondada para a imagem */
+  margin-bottom: 10px;
+}
+
+.separator-news {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.auth-form p {
+  text-align: right;
+}
+.auth-form a {
+  color: #b0641f;
+  text-decoration: underline;
+}
+
+.form-image img {
+  max-width: 90%;
+  max-height: 90%;
+  width: auto; /* Largura total da coluna da imagem */
+  height: auto; /* Altura total da coluna da imagem */
+  border-radius: 10px; /* Borda arredondada para a imagem */
+  margin-bottom: 10px;
+}
+
+.auth-form .form-control {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.7
+  ); /* Fundo branco com transparência */
+  border: none; /* Remover borda */
+  color: #000; /* Cor do texto */
+}
+
+.auth-form .form-buttons {
+  display: flex;
+  justify-content: center; /* Espaçar igualmente os botões */
+}
+
+.btn {
+  width: 50%; /* Largura total dos botões */
+  margin-top: 10px; /* Espaçamento acima dos botões */
+  background-color: #b0641f;
+  border: none;
+  text-transform: uppercase; /* Deixar o texto em maiúsculas */
+  align-self: center; /* Centralizar os botões */
+}
+
+.auth-form .auth-input {
+  margin-top: 1vh;
+}
+
+.dl-head-overlay {
+  width: 100%;
+  height: 100%;
+  background-color: hsla(0, 0%, 0%, 0.596);
+  backdrop-filter: blur(3px);
+  border-radius: 15px;
+}
+
+.dl-head-img {
+  background-image: url(../images/dl-head-img.jpg);
+  border-radius: 15px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.dl-head-session {
+  position: relative;
+  --border-width: 2px;
+  padding: var(--border-width);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.dl-border {
+  position: absolute;
+  inset: 0;
+}
+
+.dl-border::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: conic-gradient(
+    from 180deg at 50% 50%,
+    #fb5c00bd 0deg,
+    #0084ffc8 360deg
+  );
+  transform: translate(-50%, -50%) rotate(0deg);
+  animation: rotate 5s linear infinite;
+  min-width: 200%;
+  min-height: 200%;
+  aspect-ratio: 1/1;
+}
+
+@keyframes rotate {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+input::placeholder {
+  color: #5a5a5a;
+  opacity: 1;
+}
+/* Footer */
+.footer-section {
+  background-color: #b0641f; /* Fundo preto com transparência */
+  color: #fff; /* Cor do texto */
+  width: 100%; /* Largura total */
+  height: 2.5%; /* Altura do footer */
+  display: flex; /* Usando flexbox para centralizar conteúdo */
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: center; /* Centraliza horizontalmente */
+  z-index: 999; /* Certifique-se de que o footer fique acima do overlay */
+}
+
+.footer-section p {
+  margin-bottom: 0.4rem;
+  margin-top: 0.2rem;
+}
